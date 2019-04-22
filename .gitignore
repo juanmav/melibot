@@ -1,0 +1,6 @@
+.env
+cert.pem
+db.json
+key.pem
+node_modules
+.idea/
