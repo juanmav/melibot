@@ -86,7 +86,7 @@ setInterval(() => {
             }
 
         })
-}, 600 * 1000);
+}, 3600 * 1000);
 
 
 async function aggregateNotifications(notification){
