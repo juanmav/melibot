@@ -99,12 +99,14 @@ async function aggregateNotifications(notification){
     if (api){
         let get = util.promisify(api.get);
         let userData = await get('users/' + user_id);
-        //console.log(userData);
-        return { topic , nickname: userData.nickname };
+        let resource = await get(notification.resource);
+        console.log(JSON.stringify(resource, null, 4));
+        return { topic , nickname: userData.nickname, resource };
     } else {
         return { topic: 'Error', nickname: 'Sin Usuario Autenticado!'}
     }
 }
+
 
 function getUserApi(user_id){
     let userData = db.get('users').find({user_id}).value();
