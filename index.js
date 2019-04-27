@@ -77,11 +77,14 @@ function getMessage(notification){
             return `Notificacion para: ${notification.nickname} del tipo: ${notification.topic}`
         },
         questions: (notification) => {
-            return `Notificacion para: ${notification.nickname} del tipo: ${notification.topic}`
+            notification.resource.status === 'UNANSWERED' ?
+                `Pregunta para ${notification.nickname}: ${notification.resource.text}`
+                :
+                null;
         },
         orders: (notification) => {
             return `Notificacion para: ${notification.nickname} del tipo: ${notification.topic}`
-        },
+        }
     };
 
     return generators[notification.topic](notification);
@@ -131,7 +134,7 @@ async function aggregateNotifications(notification){
         // Fast fix, messages resources does not come with complete path
         // "resource": "3f6da1e35ac84f70a24af7360d24c7bc" vs "resource": "question/1010101",
         let resource = await get(notification.topic === 'messages'? 'messages/' + notification.resource : notification.resource);
-        return { topic , nickname: userData.nickname, resource };
+        return { topic , nickname: userData.nickname, user_id, resource };
     } else {
         return { topic: 'Error', nickname: 'Sin Usuario Autenticado!'}
     }
