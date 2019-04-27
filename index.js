@@ -86,7 +86,7 @@ setInterval(() => {
             }
 
         })
-}, 3600 * 1000);
+}, parseInt(process.env.REFRESH_TOKEN_TIME) * 1000);
 
 
 async function aggregateNotifications(notification){
@@ -118,4 +118,6 @@ https.createServer({
     key: fs.readFileSync(process.env.KEY_PEM),
     cert: fs.readFileSync(process.env.CERT_PEM),
     passphrase: process.env.CERT_PASSPHRASE
-}, app).listen(3000);
+}, app).listen(parseInt(process.env.HOST_PORT));
+
+console.log("Corriendo servidor en puerto: " + parseInt(process.env.HOST_PORT));
