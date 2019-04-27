@@ -99,7 +99,9 @@ async function aggregateNotifications(notification){
     if (api){
         let get = util.promisify(api.get);
         let userData = await get('users/' + user_id);
-        let resource = await get(notification.resource);
+        // Fast fix, messages resources does not come with complete path
+        // "resource": "3f6da1e35ac84f70a24af7360d24c7bc" vs "resource": "question/1010101",
+        let resource = await get(notification.topic === 'messages'? 'messages/' + notification.resource : notification.resource);
         console.log(JSON.stringify(resource, null, 4));
         return { topic , nickname: userData.nickname, resource };
     } else {
