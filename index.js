@@ -50,16 +50,42 @@ function addUser({user_id, access_token, refresh_token}){
         .write();
 }
 
-app.post('/notifications', (req, res) =>{
+app.post('/notifications', async (req, res) =>{
     console.log('Notificacion!!!!');
-    let notification = req.body;
-    console.log(notification);
-    aggregateNotifications(notification)
-        .then( r => {
-            telegram(`Notificacion para: ${r.nickname} del tipo: ${r.topic}`);
-        });
+    let notificationRequest = req.body;
+    let notification = await aggregateNotifications(notificationRequest);
+    console.log('Agregada: ' + JSON.stringify(notification, null, 4));
+    let message = getMessage(notification);
+
+    if(message) {
+        console.log("Mensaje: " + message);
+        telegram(message);
+    } else {
+        console.log('Nada para notificar!');
+    }
+
     res.status(200).json({ message: 'ok'});
 });
+
+
+/**
+ * @param notification { topic , nickname, resource };
+ * */
+function getMessage(notification){
+    let generators = {
+        messages: (notification) => {
+            return `Notificacion para: ${notification.nickname} del tipo: ${notification.topic}`
+        },
+        questions: (notification) => {
+            return `Notificacion para: ${notification.nickname} del tipo: ${notification.topic}`
+        },
+        orders: (notification) => {
+            return `Notificacion para: ${notification.nickname} del tipo: ${notification.topic}`
+        },
+    };
+
+    return generators[notification.topic](notification);
+}
 
 setInterval(() => {
     console.log('--- Listando usuarios autenticados y Refrescando Tokens!----');
@@ -71,7 +97,7 @@ setInterval(() => {
             let refreshAccessToken = util.promisify(api.refreshAccessToken);
             let result = await refreshAccessToken();
             console.log("Refreshed user: " + user.user_id);
-           // console.log(result);
+            // console.log(result);
             if (!result.status){ // if status not exist everything was ok!
                 db
                     .get('users')
@@ -89,6 +115,9 @@ setInterval(() => {
 }, parseInt(process.env.REFRESH_TOKEN_TIME) * 1000);
 
 
+/**
+ * @return { topic , nickname , resource }
+ * */
 async function aggregateNotifications(notification){
     let user_id = parseInt(notification.user_id);
     console.log(user_id);
@@ -102,7 +131,6 @@ async function aggregateNotifications(notification){
         // Fast fix, messages resources does not come with complete path
         // "resource": "3f6da1e35ac84f70a24af7360d24c7bc" vs "resource": "question/1010101",
         let resource = await get(notification.topic === 'messages'? 'messages/' + notification.resource : notification.resource);
-        console.log(JSON.stringify(resource, null, 4));
         return { topic , nickname: userData.nickname, resource };
     } else {
         return { topic: 'Error', nickname: 'Sin Usuario Autenticado!'}
