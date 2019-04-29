@@ -121,10 +121,10 @@ setInterval(() => {
 /**
  * @return { topic , nickname , resource }
  * */
-async function aggregateNotifications(notification){
-    let user_id = parseInt(notification.user_id);
+async function aggregateNotifications(notificationRequest){
+    let user_id = parseInt(notificationRequest.user_id);
     console.log(user_id);
-    let topic = notification.topic;
+    let topic = notificationRequest.topic;
     console.log('notificacion para usuario: ' + user_id);
     let api = getUserApi(user_id);
 
@@ -133,8 +133,8 @@ async function aggregateNotifications(notification){
         let userData = await get('users/' + user_id);
         // Fast fix, messages resources does not come with complete path
         // "resource": "3f6da1e35ac84f70a24af7360d24c7bc" vs "resource": "question/1010101",
-        let resource = await get(notification.topic === 'messages'? 'messages/' + notification.resource : notification.resource);
-        return { topic , nickname: userData.nickname, user_id, resource };
+        let resource = await get(notificationRequest.topic === 'messages'? 'messages/' + notificationRequest.resource : notificationRequest.resource);
+        return { topic , nickname: userData.nickname, user_id, resource, notificationRequest };
     } else {
         return { topic: 'Error', nickname: 'Sin Usuario Autenticado!'}
     }
