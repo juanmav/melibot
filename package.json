@@ -4,11 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node test/getmessage.js",
     "start": "nodemon index.js"
   },
   "nodemonConfig": {
-    "ignore": ["db.json"],
+    "ignore": [
+      "db.json"
+    ],
     "delay": "2500"
   },
   "author": "",
@@ -20,6 +22,7 @@
     "lowdb": "^1.0.0",
     "mercadolibre": "0.0.13",
     "nodemon": "^1.18.11",
+    "tape": "^4.10.1",
     "telegraf": "^3.29.0"
   }
 }

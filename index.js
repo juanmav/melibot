@@ -16,6 +16,8 @@ const db = low(adapter);
 
 const telegram = require('./telegram')(db);
 
+const getMessage = require('./getmessage');
+
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
@@ -67,28 +69,6 @@ app.post('/notifications', async (req, res) =>{
     res.status(200).json({ message: 'ok'});
 });
 
-
-/**
- * @param notification { topic , nickname, resource };
- * */
-function getMessage(notification){
-    let generators = {
-        messages: (notification) => {
-            return `Notificacion para: ${notification.nickname} del tipo: ${notification.topic}`
-        },
-        questions: (notification) => {
-            notification.resource.status === 'UNANSWERED' ?
-                `Pregunta para ${notification.nickname}: ${notification.resource.text}`
-                :
-                null;
-        },
-        orders: (notification) => {
-            return `Notificacion para: ${notification.nickname} del tipo: ${notification.topic}`
-        }
-    };
-
-    return generators[notification.topic](notification);
-}
 
 setInterval(() => {
     console.log('--- Listando usuarios autenticados y Refrescando Tokens!----');
