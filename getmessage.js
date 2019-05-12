@@ -17,7 +17,9 @@ module.exports = function getMessage(notification){
                 null;
         },
         orders: (notification) => {
-            return notification.resource.date_closed === notification.resource.last_updated ? `Venta en: ${notification.nickname}!`
+            return (notification.resource.date_closed === notification.resource.last_updated)
+            && (notification.resource.shipping.status === 'pending' || notification.resource.shipping.status === "to_be_agreed") ?
+                `Venta en: ${notification.nickname}!`
                 :
                 null;
         }

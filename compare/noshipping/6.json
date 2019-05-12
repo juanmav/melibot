@@ -1,0 +1,173 @@
+{
+  "topic": "orders",
+  "nickname": "NATU_PATT",
+  "user_id": 92514904,
+  "resource": {
+    "id": 2004452743,
+    "date_created": "2019-05-02T13:27:28.000-04:00",
+    "date_closed": "2019-05-02T13:27:30.000-04:00",
+    "last_updated": "2019-05-08T18:35:45.000-04:00",
+    "manufacturing_ending_date": null,
+    "feedback": {
+      "purchase": null,
+      "sale": {
+        "id": 9040964653739,
+        "date_created": "2019-05-08T18:35:31.000-04:00",
+        "fulfilled": true,
+        "rating": "positive",
+        "status": "hidden"
+      }
+    },
+    "mediations": [],
+    "comments": null,
+    "pack_id": null,
+    "pickup_id": null,
+    "order_request": {
+      "return": null,
+      "change": null
+    },
+    "fulfilled": true,
+    "total_amount": 2995,
+    "total_amount_with_shipping": 2995,
+    "paid_amount": 2995,
+    "coupon": {
+      "id": null,
+      "amount": 0
+    },
+    "expiration_date": "2019-05-20T18:35:31.000-04:00",
+    "order_items": [
+      {
+        "item": {
+          "id": "MLA778114661",
+          "title": "Gu Energy Gel - Caja Por 24u - Armala A Tu Gusto!",
+          "category_id": "MLA3733",
+          "variation_id": 34535758865,
+          "seller_custom_field": null,
+          "variation_attributes": [
+            {
+              "id": "FLAVOR",
+              "name": "Sabor",
+              "value_id": null,
+              "value_name": "Tri-Berry 20mg Caffeine"
+            }
+          ],
+          "warranty": null,
+          "condition": "new",
+          "seller_sku": null
+        },
+        "quantity": 1,
+        "unit_price": 2995,
+        "full_unit_price": 2995,
+        "currency_id": "ARS",
+        "manufacturing_days": null
+      }
+    ],
+    "currency_id": "ARS",
+    "payments": [
+      {
+        "id": 4729635434,
+        "order_id": 2004452743,
+        "payer_id": 63985411,
+        "collector": {
+          "id": 92514904
+        },
+        "card_id": 294064914,
+        "site_id": "MLA",
+        "reason": "Gu Energy Gel - Caja Por 24u - Armala A Tu Gusto!",
+        "payment_method_id": "visa",
+        "currency_id": "ARS",
+        "installments": 1,
+        "issuer_id": "310",
+        "atm_transfer_reference": {
+          "company_id": null,
+          "transaction_id": null
+        },
+        "coupon_id": null,
+        "activation_uri": null,
+        "operation_type": "regular_payment",
+        "payment_type": "credit_card",
+        "available_actions": [
+          "refund"
+        ],
+        "status": "approved",
+        "status_code": null,
+        "status_detail": "accredited",
+        "transaction_amount": 2995,
+        "taxes_amount": 0,
+        "shipping_cost": 0,
+        "coupon_amount": 0,
+        "overpaid_amount": 0,
+        "total_paid_amount": 2995,
+        "installment_amount": 2995,
+        "deferred_period": null,
+        "date_approved": "2019-05-02T13:27:30.000-04:00",
+        "authorization_code": "004052",
+        "transaction_order_id": null,
+        "date_created": "2019-05-02T13:27:28.000-04:00",
+        "date_last_modified": "2019-05-02T13:27:30.000-04:00"
+      }
+    ],
+    "shipping": {
+      "status": "to_be_agreed"
+    },
+    "status": "paid",
+    "status_detail": null,
+    "tags": [
+      "not_delivered",
+      "paid"
+    ],
+    "buyer": {
+      "id": 63985411,
+      "nickname": "MARCELOVERTA",
+      "email": "mverta.mp4c16+2-ogiydanbuguzdoobq@mail.mercadolibre.com",
+      "phone": {
+        "area_code": " ",
+        "extension": "",
+        "number": "1551850959",
+        "verified": false
+      },
+      "alternative_phone": {
+        "area_code": "",
+        "extension": "",
+        "number": ""
+      },
+      "first_name": "Marcelo",
+      "last_name": "Verta",
+      "billing_info": {
+        "doc_type": "DNI",
+        "doc_number": "17710459"
+      }
+    },
+    "seller": {
+      "id": 92514904,
+      "nickname": "NATU_PATT",
+      "email": "npattar.s6r8cc+2-ogiydanbuguzdonzx@mail.mercadolibre.com",
+      "phone": {
+        "area_code": null,
+        "extension": "",
+        "number": "01160432525",
+        "verified": false
+      },
+      "alternative_phone": {
+        "area_code": "",
+        "extension": "",
+        "number": ""
+      },
+      "first_name": "Natalia Karina",
+      "last_name": "Pattarone"
+    },
+    "taxes": {
+      "amount": null,
+      "currency_id": null
+    }
+  },
+  "notificationRequest": {
+    "resource": "/orders/2004452743",
+    "user_id": 92514904,
+    "topic": "orders",
+    "application_id": 7613814812044849,
+    "attempts": 1,
+    "sent": "2019-05-08T22:35:56.309Z",
+    "received": "2019-05-08T22:35:56.276Z"
+  }
+}

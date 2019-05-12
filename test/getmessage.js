@@ -102,7 +102,7 @@ test('Test get message message', function (t) {
 
 });
 
-test('Test get message orders', function(t){
+test('Test get message orders with shipping', function(t){
 
     let notificationAggregated = {
         "topic": "orders",
@@ -213,7 +213,7 @@ test('Test get message orders', function(t){
                 "shipment_type": "shipping",
                 "mode": "me2",
                 "shipping_mode": "me2",
-                "status": "delivered",
+                "status": "pending",
                 "substatus": null,
                 "date_created": "2019-04-23T12:35:49.000-04:00",
                 "receiver_address": {
@@ -367,6 +367,183 @@ test('Test get message orders', function(t){
                     "ratio": 0
                 },
                 "cost": 279.99
+            },
+            "status": "paid",
+            "status_detail": null,
+            "tags": [
+                "delivered",
+                "paid"
+            ],
+            "buyer": {
+                "id": 196704702,
+                "nickname": "TUCKYRAMOS",
+                "email": "tuckyr.1ghsp4+2-oge4tsnrrg44toobx@mail.mercadolibre.com",
+                "phone": {
+                    "area_code": null,
+                    "extension": "",
+                    "number": null,
+                    "verified": false
+                },
+                "alternative_phone": {
+                    "area_code": "",
+                    "extension": "",
+                    "number": ""
+                },
+                "first_name": "Nestor",
+                "last_name": "Ramos",
+                "billing_info": {
+                    "doc_type": "DNI",
+                    "doc_number": "20737302"
+                }
+            },
+            "seller": {
+                "id": 7780806,
+                "nickname": "ATHLET.IO",
+                "email": "jvicent.rkxftk+2-oge4tsnrrg44toobx@mail.mercadolibre.com",
+                "phone": {
+                    "area_code": "011",
+                    "extension": "",
+                    "number": "1560432525",
+                    "verified": false
+                },
+                "alternative_phone": {
+                    "area_code": "",
+                    "extension": "",
+                    "number": ""
+                },
+                "first_name": "Juan Manuel",
+                "last_name": "Vicente"
+            },
+            "taxes": {
+                "amount": null,
+                "currency_id": null
+            }
+        },
+        "notificationRequest": {
+            "resource": "/orders/1996179751",
+            "user_id": 7780806,
+            "topic": "orders",
+            "application_id": 7613814812044849,
+            "attempts": 1,
+            "sent": "2019-04-30T20:17:40.849Z",
+            "received": "2019-04-30T20:17:40.826Z"
+        }
+    };
+
+    let result = getMessage(notificationAggregated);
+    console.log(result);
+    t.ok(result);
+    t.end();
+
+});
+
+test('Test get message orders to be agreed', function(t){
+
+    let notificationAggregated = {
+        "topic": "orders",
+        "nickname": "ATHLET.IO",
+        "user_id": 7780806,
+        "resource": {
+            "id": 1996179751,
+            "date_created": "2019-04-23T12:35:49.000-04:00",
+            "date_closed": "2019-04-23T12:35:52.000-04:00",
+            "last_updated": "2019-04-23T12:35:52.000-04:00",
+            "manufacturing_ending_date": null,
+            "feedback": {
+                "sale": null,
+                "purchase": null
+            },
+            "mediations": [],
+            "comments": null,
+            "pack_id": null,
+            "pickup_id": null,
+            "order_request": {
+                "return": null,
+                "change": null
+            },
+            "fulfilled": null,
+            "total_amount": 1800,
+            "total_amount_with_shipping": 2079.99,
+            "paid_amount": 2079.99,
+            "coupon": {
+                "id": null,
+                "amount": 0
+            },
+            "expiration_date": "2019-05-21T12:35:52.000-04:00",
+            "order_items": [
+                {
+                    "item": {
+                        "id": "MLA776772346",
+                        "title": "Clif Shot - Gel - Sponsor Oficial Ironman - Chocolate",
+                        "category_id": "MLA3733",
+                        "variation_id": 34241350224,
+                        "seller_custom_field": null,
+                        "variation_attributes": [
+                            {
+                                "id": "FLAVOR",
+                                "name": "Sabor",
+                                "value_id": "2517712",
+                                "value_name": "Chocolate"
+                            }
+                        ],
+                        "warranty": "CLIF",
+                        "condition": "new",
+                        "seller_sku": null
+                    },
+                    "quantity": 15,
+                    "unit_price": 120,
+                    "full_unit_price": 120,
+                    "currency_id": "ARS",
+                    "manufacturing_days": null
+                }
+            ],
+            "currency_id": "ARS",
+            "payments": [
+                {
+                    "id": 4703530855,
+                    "order_id": 1996179751,
+                    "payer_id": 196704702,
+                    "collector": {
+                        "id": 7780806
+                    },
+                    "card_id": 323708538,
+                    "site_id": "MLA",
+                    "reason": "Clif Shot - Gel - Sponsor Oficial Ironman - Chocolate",
+                    "payment_method_id": "master",
+                    "currency_id": "ARS",
+                    "installments": 1,
+                    "issuer_id": "3",
+                    "atm_transfer_reference": {
+                        "company_id": null,
+                        "transaction_id": "989655280799960"
+                    },
+                    "coupon_id": null,
+                    "activation_uri": null,
+                    "operation_type": "regular_payment",
+                    "payment_type": "credit_card",
+                    "available_actions": [
+                        "refund"
+                    ],
+                    "status": "approved",
+                    "status_code": null,
+                    "status_detail": "accredited",
+                    "transaction_amount": 1800,
+                    "taxes_amount": 0,
+                    "shipping_cost": 279.99,
+                    "coupon_amount": 0,
+                    "overpaid_amount": 0,
+                    "total_paid_amount": 2079.99,
+                    "installment_amount": 2079.99,
+                    "deferred_period": null,
+                    "date_approved": "2019-04-23T12:35:52.000-04:00",
+                    "authorization_code": "686364",
+                    "transaction_order_id": null,
+                    "date_created": "2019-04-23T12:35:49.000-04:00",
+                    "date_last_modified": "2019-04-23T12:35:52.000-04:00"
+                }
+            ],
+            "shipping": {
+                "status": "to_be_agreed"
             },
             "status": "paid",
             "status_detail": null,

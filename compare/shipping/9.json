@@ -1,0 +1,317 @@
+{
+    "topic": "orders",
+    "nickname": "SPORTS-XTREME",
+    "user_id": 105826,
+    "resource": {
+        "id": 2009956528,
+        "date_created": "2019-05-08T12:37:23.000-04:00",
+        "date_closed": "2019-05-08T13:01:47.000-04:00",
+        "last_updated": "2019-05-08T13:01:47.000-04:00",
+        "manufacturing_ending_date": null,
+        "feedback": {
+            "sale": null,
+            "purchase": null
+        },
+        "mediations": [],
+        "comments": null,
+        "pack_id": null,
+        "pickup_id": null,
+        "order_request": {
+            "return": null,
+            "change": null
+        },
+        "fulfilled": null,
+        "total_amount": 1950,
+        "total_amount_with_shipping": 2068.99,
+        "paid_amount": 2068.99,
+        "coupon": {
+            "id": null,
+            "amount": 0
+        },
+        "expiration_date": "2019-06-05T13:01:47.000-04:00",
+        "order_items": [
+            {
+                "item": {
+                    "id": "MLA774884102",
+                    "title": "Jointmate - Milescraft - Centrador De Tarugos",
+                    "category_id": "MLA372032",
+                    "variation_id": null,
+                    "seller_custom_field": null,
+                    "variation_attributes": [],
+                    "warranty": "Garantía del vendedor: 90 días",
+                    "condition": "new",
+                    "seller_sku": "737888131907"
+                },
+                "quantity": 1,
+                "unit_price": 1950,
+                "full_unit_price": 1950,
+                "currency_id": "ARS",
+                "manufacturing_days": null
+            }
+        ],
+        "currency_id": "ARS",
+        "payments": [
+            {
+                "id": 4748485194,
+                "order_id": 2009956528,
+                "payer_id": 6590163,
+                "collector": {
+                    "id": 105826
+                },
+                "card_id": null,
+                "site_id": "MLA",
+                "reason": "Jointmate - Milescraft - Centrador De Tarugos",
+                "payment_method_id": "pagofacil",
+                "currency_id": "ARS",
+                "installments": 1,
+                "issuer_id": null,
+                "atm_transfer_reference": {
+                    "company_id": null,
+                    "transaction_id": "4331158730"
+                },
+                "coupon_id": null,
+                "activation_uri": "http://www.mercadopago.com/MLA/payments/ticket/helper?payment_id=4748485194&payment_method_reference_id=4331158730&caller_id=6590163&hash=4021d945-c42f-4162-9758-d88878c1db39",
+                "operation_type": "regular_payment",
+                "payment_type": "ticket",
+                "available_actions": [
+                    "refund"
+                ],
+                "status": "approved",
+                "status_code": null,
+                "status_detail": "accredited",
+                "transaction_amount": 1950,
+                "taxes_amount": 0,
+                "shipping_cost": 118.99,
+                "coupon_amount": 0,
+                "overpaid_amount": 0,
+                "total_paid_amount": 2068.99,
+                "installment_amount": null,
+                "deferred_period": null,
+                "date_approved": "2019-05-08T13:01:47.000-04:00",
+                "authorization_code": null,
+                "transaction_order_id": null,
+                "date_created": "2019-05-08T12:37:23.000-04:00",
+                "date_last_modified": "2019-05-08T13:01:47.000-04:00"
+            }
+        ],
+        "shipping": {
+            "id": 27956933950,
+            "site_id": "MLA",
+            "shipment_type": "shipping",
+            "mode": "me2",
+            "shipping_mode": "me2",
+            "status": "shipped",
+            "substatus": "waiting_for_withdrawal",
+            "date_created": "2019-05-08T12:37:23.000-04:00",
+            "receiver_address": {
+                "id": null,
+                "address_line": "Almafuerte 3171",
+                "street_name": "Almafuerte",
+                "street_number": "3171",
+                "comment": null,
+                "zip_code": "1754",
+                "city": {
+                    "id": null,
+                    "name": "San Justo"
+                },
+                "state": {
+                    "id": "AR-B",
+                    "name": "Buenos Aires"
+                },
+                "country": {
+                    "id": "AR",
+                    "name": "Argentina"
+                },
+                "neighborhood": {
+                    "id": null,
+                    "name": null
+                },
+                "municipality": {
+                    "id": null,
+                    "name": null
+                },
+                "types": [
+                    "agency_address"
+                ],
+                "latitude": -34.6783158,
+                "longitude": -58.5593287,
+                "geolocation_type": null,
+                "agency": {
+                    "carrier_id": 17501440,
+                    "agency_id": "20079",
+                    "description": "Correo Argentino",
+                    "phone": "0810-777-7787",
+                    "open_hours": "Lunes a viernes de 10 a 18 hs."
+                },
+                "receiver_name": "Piperno domingo Eduardo ",
+                "receiver_phone": null
+            },
+            "sender_address": {
+                "id": 889394191,
+                "address_line": "TRIUNVIRATO 3613",
+                "street_name": "TRIUNVIRATO",
+                "street_number": "3613",
+                "comment": null,
+                "zip_code": "1431",
+                "city": {
+                    "id": null,
+                    "name": "Villa Ortúzar"
+                },
+                "state": {
+                    "id": "AR-C",
+                    "name": "Capital Federal"
+                },
+                "country": {
+                    "id": "AR",
+                    "name": "Argentina"
+                },
+                "neighborhood": {
+                    "id": null,
+                    "name": null
+                },
+                "municipality": {
+                    "id": null,
+                    "name": null
+                },
+                "agency": null,
+                "types": [
+                    "default_buying_address",
+                    "shipping"
+                ],
+                "latitude": -34.581966,
+                "longitude": -58.472398,
+                "geolocation_type": "ROOFTOP"
+            },
+            "currency_id": "ARS",
+            "date_first_printed": "2019-05-08T14:52:58.000-04:00",
+            "service_id": 431,
+            "shipping_items": [
+                {
+                    "id": "MLA774884102",
+                    "description": "Jointmate - Milescraft - Centrador De Tarugos",
+                    "quantity": 1,
+                    "dimensions": "10.0x11.0x11.0,597.0",
+                    "dimensions_source": {
+                        "id": "MLA774884102",
+                        "origin": "high_coverage"
+                    }
+                }
+            ],
+            "receiver_id": 6590163,
+            "sender_id": 105826,
+            "shipping_option": {
+                "id": 531424185,
+                "shipping_method_id": 503045,
+                "name": "Retiro en Correo Argentino",
+                "currency_id": "ARS",
+                "list_cost": 118.99,
+                "cost": 118.99,
+                "delivery_type": "estimated",
+                "estimated_schedule_limit": {
+                    "date": null
+                },
+                "estimated_delivery_time": {
+                    "type": "known_frame",
+                    "date": "2019-05-09T00:00:00.000-03:00",
+                    "unit": "hour",
+                    "offset": {
+                        "date": "2019-05-10T00:00:00.000-03:00",
+                        "shipping": 24
+                    },
+                    "time_frame": {
+                        "from": null,
+                        "to": null
+                    },
+                    "pay_before": null,
+                    "shipping": 24,
+                    "handling": 6,
+                    "schedule": null
+                },
+                "estimated_delivery_limit": {
+                    "date": "2019-05-24T00:00:00.000-03:00",
+                    "offset": 240
+                },
+                "estimated_delivery_final": {
+                    "date": "2019-09-06T00:00:00.000-03:00",
+                    "offset": 1920
+                },
+                "estimated_delivery_extended": {
+                    "date": "2019-05-15T00:00:00.000-03:00",
+                    "offset": 72
+                },
+                "estimated_handling_limit": {
+                    "date": "2019-05-08T00:00:00.000-03:00"
+                }
+            },
+            "logistic_type": "drop_off",
+            "picking_type": null,
+            "cost_components": {
+                "special_discount": 0,
+                "loyal_discount": 0.3,
+                "compensation": 0,
+                "gap_discount": 0,
+                "ratio": 0
+            },
+            "cost": 118.99
+        },
+        "status": "paid",
+        "status_detail": null,
+        "tags": [
+            "not_delivered",
+            "paid"
+        ],
+        "buyer": {
+            "id": 6590163,
+            "nickname": "MONOLOCO58",
+            "email": "dpipern.wcx0py+2-ogiydaojzgu3dknjy@mail.mercadolibre.com",
+            "phone": {
+                "area_code": null,
+                "extension": "",
+                "number": "02204924815",
+                "verified": false
+            },
+            "alternative_phone": {
+                "area_code": "",
+                "extension": "",
+                "number": "111550090901"
+            },
+            "first_name": "DOMINGO EDUARDO",
+            "last_name": "PIPERNO",
+            "billing_info": {
+                "doc_type": "DNI",
+                "doc_number": "13158009"
+            }
+        },
+        "seller": {
+            "id": 105826,
+            "nickname": "SPORTS-XTREME",
+            "email": "azugnon.r9ddqq+2-ogiydaojzgu3dknjq@mail.mercadolibre.com",
+            "phone": {
+                "area_code": "011",
+                "extension": "",
+                "number": "1554231111",
+                "verified": false
+            },
+            "alternative_phone": {
+                "area_code": "",
+                "extension": "",
+                "number": ""
+            },
+            "first_name": "Anibal",
+            "last_name": "Zugnoni"
+        },
+        "taxes": {
+            "amount": null,
+            "currency_id": null
+        }
+    },
+    "notificationRequest": {
+        "resource": "/orders/2009956528",
+        "user_id": 105826,
+        "topic": "orders",
+        "application_id": 7613814812044849,
+        "attempts": 1,
+        "sent": "2019-05-09T19:00:00.845Z",
+        "received": "2019-05-09T19:00:00.800Z"
+    }
+}
