@@ -16,7 +16,7 @@ const db = low(adapter);
 
 const telegram = require('./telegram')(db);
 
-const getMessage = require('./getmessage');
+const getMessage = require('./getmessage')(db);
 
 app.use(bodyParser.json());
 

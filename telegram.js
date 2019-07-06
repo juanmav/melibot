@@ -7,8 +7,9 @@ module.exports = function(database) {
 
     bot.start((ctx) => {
         console.log('Connections entrante');
-        let connection = {userId: ctx.from.id, chatId: ctx.chat.id};
+        let connection = {userId: ctx.from.id, from: ctx.from, chatId: ctx.chat.id};
         console.log(connection);
+        // TODO enviar URL para registar cuenta de ML, agregar permisos MercadoPago
         ctx.reply('Ya estas subcripto a las notificiaciones!');
         db
             .get('telegrams')
