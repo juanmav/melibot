@@ -13,7 +13,7 @@ module.exports = function (db) {
             },
             questions: (notification) => {
                 return notification.resource.status === 'UNANSWERED' ?
-                    `Pregunta para ${notification.nickname}: ${notification.resource.text}`
+                    `Pregunta para ${notification.nickname} de ${notification.from.nickname}: ${notification.resource.text}`
                     :
                     null;
             },
