@@ -28,7 +28,7 @@ module.exports = function (db) {
                     db.get('orders')
                         .push({id: notification.resource.id})
                         .write();
-                    return `Venta en: ${notification.nickname}! ( Producto: ${notification.resource.order_items[0].item.title})`;
+                    return `Venta en: ${notification.nickname}!, comprador: ${notification.resource.buyer.nickname}, ( Producto: ${notification.resource.order_items[0].item.title})`;
                 }
 
             }
